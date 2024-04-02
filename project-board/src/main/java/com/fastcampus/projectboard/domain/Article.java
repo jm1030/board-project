@@ -24,9 +24,9 @@ import java.util.Set;
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy")
 })
-@EntityListeners(AuditingEntityListener.class)
+
 @Entity
-public class Article {
+public class Article extends AuditingFields {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -43,10 +43,6 @@ public class Article {
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
 //  자동으로 jpa가 세팅해주게 설정할건데 Setter 만들어두면 내가 임의로 이 내용을 수정할 수 있게 되므로 설계 의도를 벗어남.
-    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt; // 생성일시
-    @CreatedBy @Column(nullable = false, length = 100) private String createdBy;  // 생성자
-    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt;  // 수정일시
-    @LastModifiedBy @Column(nullable = false, length = 100) private String modifiedBy; // 수정자
 
     protected Article(){}
 
