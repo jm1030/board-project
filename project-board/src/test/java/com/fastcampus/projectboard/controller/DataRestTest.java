@@ -1,5 +1,6 @@
 package com.fastcampus.projectboard.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
+// 필요하지 않은 파일. 공부목적으로 해본 것. disabled 사용해서 실행 X
+
+@Disabled("Spring Data REST 통합테스트는 불필요하므로 제외") // 해당 test class 밑에 있는 모든 unit test들은 실행되지 않는다.
 @DisplayName("Data REST - API 테스트")
 @Transactional
 @AutoConfigureMockMvc
