@@ -17,7 +17,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
-// 필요하지 않은 파일. 공부목적으로 해본 것. disabled 사용해서 실행 X
+// 이 파일은 이 프로젝트의 비즈니스 로직으로 구현한 내용이 아니라 data rest 기능이고,
+// 통합 테스트라 무거우며 db 에도 영향을 준다.
+// 공부 목적으로도 의미는 있기 때문에 삭제하지는 않고 제외처리해서 전체 테스트 중에 실행되지 않게끔 처리
 
 @Disabled("Spring Data REST 통합테스트는 불필요하므로 제외") // 해당 test class 밑에 있는 모든 unit test들은 실행되지 않는다.
 @DisplayName("Data REST - API 테스트")
