@@ -12,7 +12,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
-                //.formLogin().and()
+                .formLogin().and() // 지우면 안됨. 빨간줄 에러 뜬 상태로라도 services 실행하면 http://localhost:8080/login 페이지 실행된다.
                 .build();
     }
 }
